@@ -1,5 +1,7 @@
+from test_parser import *
+
 class Test():
 
-    
+
     def __init__(self, test_path):
-        pass
+        self.__test_parser = TestParser(test_path) 
