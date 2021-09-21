@@ -1,4 +1,4 @@
-from menu_utility import *
+from menu_utility import Menu
 
 def main():
     Menu().display()

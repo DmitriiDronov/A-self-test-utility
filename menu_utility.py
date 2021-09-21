@@ -1,7 +1,7 @@
 from os import listdir
 from os.path import isfile, join
 from pathlib import Path
-from test import *
+from test import Test
 
 class Menu():
     
@@ -11,14 +11,17 @@ class Menu():
         self.__test_files_with_path = self.__get_test_files()
         self.__menuMap = self.__map_tests_to_number()
 
+
     def display(self):
         map = self.__menuMap
         for key in map:
             print(str(key) + '. ' + map[key])
 
+
     def ask_for_choice(self):
         choice = input("Enter a nubmer of test you want to study: ")
         self.handle_choice(choice)
+
 
     def handle_choice(self, choice):
         choice = int(choice)
@@ -28,6 +31,7 @@ class Menu():
             print("Invalid choice, try again")
             self.ask_for_choice()
         return self.get_test_by_choice(choice)
+
 
     def get_test_by_choice(self, choice):
         test_name = self.__menuMap.get(choice)
