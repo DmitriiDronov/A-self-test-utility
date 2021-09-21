@@ -1,6 +1,7 @@
 from test_parser import TestParser
 from test_question import TestQuestion
-from utility import clear_scr
+from utility import clear_scr, press_enter_to_continue
+from datetime import datetime
 import time
 
 
@@ -11,6 +12,7 @@ class Test():
         self.__test_parser = TestParser(test_path) 
         self.question_queue = self.__test_parser.get_question_queue()
         self.question_queue.reverse()
+        self.total_questions = len(self.question_queue)
 
         self.answered_correctly = 0
         self.answered_incorrectly = 0
@@ -22,7 +24,7 @@ class Test():
     def start(self):
         self.start_time = time.time()
         while (self.question_queue):
-            # clear_scr()
+            clear_scr()
             self.question_number = self.question_number + 1
             self.__print_statistics()
 
@@ -39,14 +41,19 @@ class Test():
             for i in range(number_of_correct_answers):
                 answer_index = int(input('Enter {} answer: '.format(i)))
                 user_answers.append(all_answers[answer_index])
-                print(user_answers)
 
             if (self.__check_answers(user_answers)):
+                self.answered_correctly = self.answered_correctly + 1
                 print('Correct!')
             else:
+                self.answered_incorrectly = self.answered_incorrectly + 1
                 print('Correct answers: ')
                 for answer in correct_answers:
-                    print(answer)
+                    for key in answer.keys():
+                        if key == 'answer_text':
+                            print(answer[key])
+            
+            press_enter_to_continue()
             
 
         self.__print_summary()    
@@ -61,10 +68,25 @@ class Test():
 
 
     def __print_statistics(self):
-        print(str(self.question_number).center(50))
-        answered_incorrectly = 'Answered incorectly {}'.format(self.answered_incorrectly).ljust(50)
-        answered_correctly = 'Answered correctly {}'.format(self.answered_correctly).rjust(50)
-        print(answered_incorrectly + ' ' + answered_correctly)
+        print("Question {} of {}".format(self.question_number, self.total_questions))
+
+        answered_correctly = 'Answered correctly {}'.format(self.answered_correctly)
+        print(answered_correctly)
+        answered_incorrectly = 'Answered incorectly {}'.format(self.answered_incorrectly)
+        print(answered_incorrectly)
+
+        success_persentage = self.__get_success_percentage()
+        print("Success: {}%".format(success_persentage))
+
+        time_now = time.time()
+        time_passed = datetime.fromtimestamp(time_now - self.start_time)
+        print("Time passed {}".format(time_passed.strftime("%M:%S")))
+        print('*' * 50)
+
+
+    def __get_success_percentage(self):
+        success_percentage = (100 * self.answered_correctly) / self.total_questions
+        return success_percentage
 
 
     def __print_summary(self):

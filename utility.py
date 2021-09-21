@@ -6,3 +6,6 @@ def clear_scr():
         _ = system('cls')
     else:
         _ = system('clear')
+
+def press_enter_to_continue():
+    input("Press enter to continue...")
