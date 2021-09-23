@@ -1,0 +1,25 @@
+{
+    "questions": [
+      {
+        "question_text": "Where can a system administrator go if he is trying to determine why a user cannot log into Salesforce? \n Choose 2 answers.",
+        "answers": [
+          {
+            "answer_text": "The Login History related list on the user's record.",
+            "value": 1
+          },
+          {
+            "answer_text": "The user's profile",
+            "value": 0
+          },
+          {
+            "answer_text": "Manage Users --&gt; Login History",
+            "value": 1
+          },
+          {
+            "answer_text": "Call salesforce.com Support",
+            "value": 0
+          }
+        ]
+      }
+    ]
+}

@@ -11,6 +11,12 @@ class TestQuestion():
         for index, answer in enumerate(self.answers):
             question = question + str(index) + '. ' + answer['answer_text'] + '\n'
         return question
+    
+    def print_with_answer(self) -> None:
+        question = str(self.question_text + '\n').center(50)
+        for index, answer in enumerate(self.answers):
+            question = question + str(index) + '. ' + answer['answer_text'] + ' - ' + str(answer['value']) + '\n'
+        print(question)
 
 
     def get_all_answers(self) -> list:
