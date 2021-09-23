@@ -7,7 +7,7 @@ class TestQuestion():
 
 
     def __str__(self):
-        question = str(self.question_text + '\n').center(50)
+        question = str(self.question_text + '\n')
         for index, answer in enumerate(self.answers):
             question = question + str(index) + '. ' + answer['answer_text'] + '\n'
         return question
@@ -32,6 +32,8 @@ class TestQuestion():
 
 
     def __is_answer_correct(self, answer) -> bool:
+        if (not answer):
+            return None
         if (answer['value'] == 1):
             return True
         return False
