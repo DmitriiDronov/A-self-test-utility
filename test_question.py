@@ -33,7 +33,8 @@ class TestQuestion():
 
     def __is_answer_correct(self, answer) -> bool:
         if (not answer):
-            return None
+            return False
+            
         if (answer['value'] == 1):
             return True
         return False

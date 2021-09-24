@@ -1,6 +1,8 @@
 from os import system, name
 
 class Utility:
+
+    
     @staticmethod
     def clear_scr():
         if name == 'nt':

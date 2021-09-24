@@ -50,4 +50,4 @@ class TestQuestionTestCase(unittest.TestCase):
         self.assertEqual(actual_result, expected_result, "TestQuestion class: __is_answer_correct, should return False when passing false answer")
 
         actual_result = testQuestion._TestQuestion__is_answer_correct("")
-        self.assertEqual(actual_result, None, "TestQuestion class: __is_answer_correct, should return None when passing nothing")
+        self.assertEqual(actual_result, False, "TestQuestion class: __is_answer_correct, should return None when passing nothing")
