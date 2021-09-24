@@ -1,0 +1,82 @@
+{
+    "questions": [
+      
+      {
+        "question_text": "What is the this software's author nickname?",
+        "answers": [
+          
+          {
+            "answer_text": "BATKOVICH",
+            "value": 1
+          },
+          
+          {
+            "answer_text": "Dmitrii",
+            "value": 0
+          },
+          
+          {
+            "answer_text": "Player Unknown",
+            "value": 0
+          },
+          
+          {
+            "answer_text": "Jason",
+            "value": 0
+          }
+        ]
+      },
+
+      {
+        "question_text": "Who did paint Mona Lisa?",
+        "answers": [
+          
+          {
+            "answer_text": "Me",
+            "value": 0
+          },
+
+          {
+            "answer_text": "Leonardo da Vinci",
+            "value": 1
+          },
+          
+          {
+            "answer_text": "Niccolò Machiavelli",
+            "value": 0
+          },
+          
+          {
+            "answer_text": "Leonardo DiCaprio",
+            "value": 0
+          }
+        ]
+      },
+
+      {
+        "question_text": "When was the \"Star Wars: The Empire Strikes Back (Episode V)\" movie shot?",
+        "answers": [
+          
+          {
+            "answer_text": "1990",
+            "value": 0
+          },
+
+          {
+            "answer_text": "1970",
+            "value": 0
+          },
+          
+          {
+            "answer_text": "1980",
+            "value": 1
+          },
+          
+          {
+            "answer_text": "1960",
+            "value": 0
+          }
+        ]
+      }
+    ]
+}
